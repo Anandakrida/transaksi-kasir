@@ -1,0 +1,340 @@
+* {
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --primary: #2563eb;
+    --primary-dark: #1d4ed8;
+    --text: #1e293b;
+    --muted: #64748b;
+    --border: #e2e8f0;
+    --surface: #ffffff;
+    --radius: 10px;
+}
+
+body {
+    background: linear-gradient(135deg, #f8fafc 0%, #eef2ff 100%);
+    color: var(--text);
+    min-height: 100vh;
+}
+
+header {
+    background: linear-gradient(110deg, #1e293b, #334155);
+    color: white;
+    padding: 18px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+header h1 {
+    font-size: 20px;
+}
+
+header nav a {
+    color: #fff;
+    text-decoration: none;
+    margin-left: 15px;
+    font-weight: 500;
+    padding: 6px 12px;
+    border-radius: 4px;
+    transition: background 0.2s;
+}
+
+header nav a:hover {
+    background: #334155;
+}
+
+.container {
+    padding: 28px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 24px;
+    align-items: stretch;
+}
+
+.grid > * {
+    flex: 1 1 280px;
+    min-width: 0;
+}
+
+@media (max-width: 768px) {
+    .grid {
+        display: block;
+    }
+
+    .grid > * {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+}
+
+.card {
+    background: var(--surface);
+    padding: 24px;
+    border: 1px solid rgba(226, 232, 240, .8);
+    border-radius: var(--radius);
+    box-shadow: 0 8px 24px rgba(15, 23, 42, .07);
+}
+
+.card h2 {
+    margin-bottom: 15px;
+    font-size: 18px;
+    border-bottom: 2px solid #f1f5f9;
+    padding-bottom: 10px;
+}
+
+.form-group {
+    margin-bottom: 18px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 700;
+    font-size: 13px;
+    letter-spacing: 0.2px;
+    color: #334155;
+}
+
+.form-group input, .form-group select {
+    width: 100%;
+    min-height: 46px;
+    padding: 12px 14px;
+    border: 1px solid #d8e1ee;
+    border-radius: 10px;
+    font-size: 14px;
+    color: var(--text);
+    background: linear-gradient(180deg, #ffffff 0%, #f8fafc 100%);
+    box-shadow: inset 0 1px 2px rgba(15, 23, 42, 0.04);
+    transition: border-color .2s ease, box-shadow .2s ease, transform .2s ease;
+}
+
+.form-group input::placeholder {
+    color: #94a3b8;
+}
+
+.form-group input:focus, .form-group select:focus {
+    outline: none;
+    border-color: var(--primary);
+    box-shadow: 0 0 0 4px rgba(37, 99, 235, .14);
+    transform: translateY(-1px);
+}
+
+.btn {
+    padding: 12px 18px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: 700;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+    text-align: center;
+    letter-spacing: 0.2px;
+    transition: transform .2s ease, box-shadow .2s ease, background .2s ease, opacity .2s ease;
+}
+
+.btn:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 8px 18px rgba(15, 23, 42, .12);
+}
+
+.btn-primary { background: linear-gradient(135deg, #2563eb, #1d4ed8); color: white; }
+.btn-primary:hover { background: linear-gradient(135deg, #1d4ed8, #1e40af); }
+
+.btn-success {
+    background: linear-gradient(135deg, #22c55e, #16a34a);
+    color: white;
+    width: auto;
+    min-width: 180px;
+    padding: 12px 20px;
+    border: 1px solid rgba(22, 163, 74, 0.25);
+    box-shadow: 0 10px 20px rgba(34, 197, 94, 0.18);
+}
+.btn-success:hover {
+    background: linear-gradient(135deg, #16a34a, #15803d);
+}
+
+.btn-danger { background: #dc2626; color: white; }
+.btn-danger:hover { background: #b91c1c; }
+
+.btn-secondary { background: #64748b; color: white; }
+.btn-secondary:hover { background: #475569; }
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+    font-size: 14px;
+    background: #fff;
+}
+
+table th, table td {
+    border: 1px solid #e2e8f0;
+    padding: 8px 10px;
+    text-align: left;
+}
+
+table th {
+    background: #f1f5f9;
+    color: #475569;
+    font-weight: 700;
+}
+
+table tr:nth-child(even) td {
+    background: #fafcff;
+}
+
+table tr:hover td {
+    background: #eff6ff;
+}
+
+.img-thumb {
+    width: 42px;
+    height: 42px;
+    max-width: 42px;
+    max-height: 42px;
+    object-fit: cover;
+    display: block;
+    border-radius: 6px;
+    border: 1px solid #ddd;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    object-fit: contain;
+}
+
+@media (max-width: 600px) {
+    header {
+        padding: 15px;
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+    header nav a {
+        margin-left: 5px;
+        padding: 6px 8px;
+    }
+    .container {
+        padding: 18px 12px;
+    }
+    .card {
+        padding: 16px;
+    }
+    table {
+        display: block;
+        overflow-x: auto;
+        white-space: nowrap;
+    }
+}
+
+/* =========================================================
+   STYLING STRUK KASIR & PRINT CSS
+========================================================= */
+.struk-wrapper {
+    display: flex;
+    justify-content: center;
+    padding: 20px 0;
+}
+
+.struk-box {
+    width: 80mm; /* Standar Ukuran Kertas Thermal Struk */
+    background: #fff;
+    padding: 15px;
+    border: 1px solid #ccc;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 12px;
+    line-height: 1.3;
+    color: #000;
+}
+
+.struk-header {
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.struk-header h2 {
+    font-size: 16px;
+    margin-bottom: 4px;
+    font-weight: bold;
+}
+
+.struk-header p {
+    font-size: 11px;
+    margin: 2px 0;
+}
+
+.divider {
+    border-top: 1px dashed #000;
+    margin: 8px 0;
+}
+
+.struk-table {
+    width: 100%;
+    border: none;
+    margin: 5px 0;
+}
+
+.struk-table td {
+    border: none;
+    padding: 2px 0;
+}
+
+.text-right {
+    text-align: right;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.flex-between {
+    display: flex;
+    justify-content: space-between;
+    margin: 3px 0;
+}
+
+.struk-footer {
+    text-align: center;
+    margin-top: 10px;
+    font-size: 11px;
+}
+
+/* MEDIA PRINT RULE */
+@media print {
+    body {
+        background: #fff !important;
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+    header, .no-print {
+        display: none !important;
+    }
+    .struk-wrapper {
+        padding: 0 !important;
+    }
+    .struk-box {
+        border: none !important;
+        box-shadow: none !important;
+        width: 100% !important;
+        max-width: 80mm !important;
+        padding: 0 !important;
+        margin: 0 auto !important;
+    }
+    @page {
+        size: auto;
+        margin: 0mm;
+    }
+}
